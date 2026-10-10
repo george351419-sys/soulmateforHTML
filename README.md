@@ -51,3 +51,7 @@ npm run deploy:pages
 `lib/client-api.ts` 是服务端版本适配层；`pages/client-api.ts` 是 Pages 本地计算适配层。两者共享同一个页面和排盘解读算法。
 
 详细来源与口径见 [方法说明](docs/method.md)。紫微算法来源许可证保留于 `lib/ziwei/LICENSE`。项目不包含 API 密钥、用户出生资料历史或本机配置。
+
+## DeepSeek 文字解读
+
+已准备 Vercel/Workers 服务端接口、限流和结构校验。线上启用需要私密设置 `DEEPSEEK_API_KEY`，并在 Pages 构建时设置公开后端地址 `VITE_INTERPRET_API_URL`。没有地址或服务不可用时明确显示基础报告。详细步骤见 [DeepSeek 部署说明](docs/deepseek-setup.md)。DeepSeek 用于文字解读，不生成肖像。

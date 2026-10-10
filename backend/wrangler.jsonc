@@ -1,0 +1,15 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "soulmate-deepseek-api",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-08",
+  "vars": {
+    "ALLOWED_ORIGINS": "https://george351419-sys.github.io",
+    "DEEPSEEK_MODEL": "deepseek-flash"
+  },
+  "ratelimits": [
+    {"name":"REQUEST_LIMITER","namespace_id":"35141901","simple":{"limit":3,"period":60}},
+    {"name":"SITE_LIMITER","namespace_id":"35141902","simple":{"limit":30,"period":60}}
+  ],
+  "observability": {"enabled":false}
+}
