@@ -11,7 +11,7 @@ assert.equal((await worker.fetch(req({...input,name:'must not be sent'}),env)).s
 assert.equal((await worker.fetch(req(),{...env,REQUEST_LIMITER:{limit:async()=>({success:false})}})).status,429);
 const original=globalThis.fetch;let called=false;
 try{
- globalThis.fetch=async(url,options)=>{called=true;assert.equal(url,'https://api.deepseek.com/chat/completions');const body=JSON.parse(options.body);assert.equal(body.model,'deepseek-flash');assert.deepEqual(JSON.parse(body.messages[1].content),input);return Response.json({choices:[{message:{content:JSON.stringify({summary:'仅为传统取象。',appearance:[section],traits:[section],relationship:[section]})}}]});};
+ globalThis.fetch=async(url,options)=>{called=true;assert.equal(url,'https://api.deepseek.com/chat/completions');const body=JSON.parse(options.body);assert.equal(body.model,'deepseek-flash');const sent=JSON.parse(body.messages[1].content);assert.deepEqual(sent.spousePalaceMainStars,input.stars);assert.equal(sent.stars,undefined);assert.equal(sent.name,undefined);return Response.json({choices:[{message:{content:JSON.stringify({summary:'仅为传统取象。',appearance:[section],traits:[section],relationship:[section]})}}]});};
  const response=await worker.fetch(req(),env);assert.equal(response.status,200);assert.equal(response.headers.get('Access-Control-Allow-Origin'),origin);assert.equal((await response.json()).provider,'DeepSeek');assert.ok(called);
  globalThis.fetch=async()=>Response.json({choices:[{message:{content:'not json'}}]});assert.equal((await worker.fetch(req(),env)).status,502);
 }finally{globalThis.fetch=original;}

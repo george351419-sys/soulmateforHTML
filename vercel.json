@@ -2,6 +2,19 @@
   "framework": null,
   "buildCommand": "npm run build:pages",
   "outputDirectory": "dist-pages",
-  "functions": {"api/interpret.mjs": {"maxDuration": 60}},
-  "rewrites": [{"source":"/interpret","destination":"/api/interpret"}]
+  "functions": {
+    "api/interpret.mjs": {
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/interpret",
+      "destination": "/api/interpret"
+    },
+    {
+      "source": "/soulmateforHTML/:path*",
+      "destination": "/:path*"
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 import {analyze} from '../lib/analyze';
+import serviceConfig from './service-config.json';
 import type {BirthInput,Report} from '../lib/types';
-const api=import.meta.env.VITE_INTERPRET_API_URL?.replace(/\/$/,'')||'';
+const api=(import.meta.env.VITE_INTERPRET_API_URL||serviceConfig.apiUrl).replace(/\/$/,'');
 export const assetUrl=(path:string)=>import.meta.env.BASE_URL+path.replace(/^\//,'');
 export const imageUnavailableMessage='文字报告已生成。新画像需接通独立的 AI 生图服务，目前不会用示例图片替代你的画像。';
 export const availabilityNote='可生成伴侣文字报告；AI 肖像绘制尚未接通。';

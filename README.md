@@ -6,7 +6,7 @@
 
 ## GitHub Pages 版本
 
-- 出生资料在当前浏览器内计算，不发送到排盘服务器，也不写入历史库。
+- 出生资料在当前浏览器内排盘；启用 DeepSeek 时仅发送四柱、星曜和规则摘要，不发送姓名、生日原文、地点，也不建立出生资料历史库。
 - 支持公历、农历、闰月、时辰、明确时区及夏令时校正。
 - 页面提供明确标记的肖像示例。**实时 AI 生图尚未接通**：GitHub Pages 是静态托管，不能运行私密生图服务端。不会用示例图冒充用户结果。
 - 姓名只用于报告称呼。海外出生需手动选择支持的时区；采用标准时，不做经度与真太阳时校正。
@@ -55,3 +55,5 @@ npm run deploy:pages
 ## DeepSeek 文字解读
 
 已准备 Vercel/Workers 服务端接口、限流和结构校验。线上启用需要私密设置 `DEEPSEEK_API_KEY`，并在 Pages 构建时设置公开后端地址 `VITE_INTERPRET_API_URL`。没有地址或服务不可用时明确显示基础报告。详细步骤见 [DeepSeek 部署说明](docs/deepseek-setup.md)。DeepSeek 用于文字解读，不生成肖像。
+
+生产后端：`https://soulmatefor-html-tawny.vercel.app`。公开地址保存在 `pages/service-config.json`，可用 `VITE_INTERPRET_API_URL` 覆盖。私密密钥仅保存在 Vercel 生产环境。
