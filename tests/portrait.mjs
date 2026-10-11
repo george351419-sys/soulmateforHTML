@@ -12,7 +12,7 @@ async function call(body,origin='https://example.com'){
 }
 assert.equal((await call({gender:'male',features:['自然清秀']})).statusCode,200);
 assert.equal(sent.model,'doubao-seedream-5-0-flash-260915');
-assert.equal(sent.watermark,true);
+assert.equal(sent.watermark,false);
 assert.equal((await call({gender:'male',features:['自然'],name:'private'})).statusCode,400);
 assert.equal((await call({gender:'male',features:['自然']},'https://bad.com')).statusCode,403);
 globalThis.fetch=async()=>({ok:true,json:async()=>({data:[{url:'javascript:bad'}]})});
