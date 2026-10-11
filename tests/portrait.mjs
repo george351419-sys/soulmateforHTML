@@ -11,7 +11,7 @@ async function call(body,origin='https://example.com'){
  await handler(req,res);return res;
 }
 assert.equal((await call({gender:'male',features:['自然清秀']})).statusCode,200);
-assert.equal(sent.model,'doubao-seedream-4-5-251128');
+assert.equal(sent.model,'doubao-seedream-5-0-flash-260915');
 assert.equal(sent.watermark,true);
 assert.equal((await call({gender:'male',features:['自然'],name:'private'})).statusCode,400);
 assert.equal((await call({gender:'male',features:['自然']},'https://bad.com')).statusCode,403);

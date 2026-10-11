@@ -59,4 +59,4 @@ npm run deploy:pages
 生产后端：`https://soulmatefor-html-tawny.vercel.app`。公开地址保存在 `pages/service-config.json`，可用 `VITE_INTERPRET_API_URL` 覆盖。私密密钥仅保存在 Vercel 生产环境。
 
 ### 火山画像服务
-在 Vercel production 配置敏感变量 ARK_API_KEY，可选 ARK_IMAGE_MODEL（默认 doubao-seedream-4-5-251128），重新部署后生效。账号需要对应模型权限与余额。/api/portrait 每实例每 IP 每分钟 2 次、总计 10 次；这不是全局费用上限。密钥仅在服务端使用，失败保留文字报告。
+在 Vercel production 配置敏感变量 ARK_API_KEY，可选 ARK_IMAGE_MODEL（默认 doubao-seedream-5-0-flash-260915），重新部署后生效。账号需要对应模型权限与余额。/api/portrait 每实例每 IP 每分钟 2 次、总计 10 次；这不是全局费用上限。密钥仅在服务端使用，失败保留文字报告。
