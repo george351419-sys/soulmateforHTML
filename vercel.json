@@ -5,6 +5,9 @@
   "functions": {
     "api/interpret.mjs": {
       "maxDuration": 60
+    },
+    "api/portrait.mjs": {
+      "maxDuration": 120
     }
   },
   "rewrites": [
