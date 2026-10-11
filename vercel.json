@@ -8,6 +8,9 @@
     },
     "api/portrait.mjs": {
       "maxDuration": 120
+    },
+    "api/match.mjs": {
+      "maxDuration": 60
     }
   },
   "rewrites": [
