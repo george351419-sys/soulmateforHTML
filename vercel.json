@@ -14,6 +14,9 @@
     },
     "api/match-v2.mjs": {
       "maxDuration": 60
+    },
+    "api/match-v3.mjs": {
+      "maxDuration": 60
     }
   },
   "rewrites": [
